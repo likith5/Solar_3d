@@ -1,0 +1,299 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    
+<script>
+        // Register a new component to handle the click event
+        AFRAME.registerComponent('sunclickhandler', {
+        init: function () {
+          var el = this.el;
+          var lol = document.getElementById('losun');
+        
+          // var mer1 = document.getElementById('mercury1');
+          var mixin1Id = 'dee';
+          
+          // console.log(mer1)
+          // Add a click event listener to the entity
+          var text_view = false;
+
+          el.addEventListener('click', function (event) {
+            var clickedEntity = event.target;
+            console.log('Clicked Entity:', clickedEntity);
+            // Create a new <a-text> element
+              if (!text_view){ 
+                var newText = document.createElement('a-text');
+                var planetText = document.createElement('a-text');
+            // newText.setAttribute('value', 'The Sun is star at the center of the Solar System. It is a massive, hot ball of plasma, inflated and heated by energy produced by nuclear fusion reactions at its core');
+            // newText.setAttribute('position', '0 30 0'); // Adjusted position
+            // newText.setAttribute('scale', '10 10 10'); // Adjusted scale
+            // newText.setAttribute( 'color', 'white');
+            // newText.setAttribute('width', '10px');
+            newText.setAttribute('mixin',mixin1Id)
+            // newText.setAttribute( 'id', 'dee');
+            // planetText.setAttribute('value',"The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and  the sunlight would be as much as seven times brighter." );
+            // planetText.setAttribute('position', '0 30 0'); // Adjusted position
+            // planetText.setAttribute('scale', '10 10 10'); // Adjusted scale
+            // planetText.setAttribute( 'color', 'white');
+            // planetText.setAttribute('width', '5px');
+            // planetText.setAttribute( 'id', 'mer11');
+
+            // Append the new <a-text> element to the scene
+            lol.appendChild(newText);
+            // mer1.appendChild(planetText)
+            text_view = true;
+          console.log(lol)
+          // lets.removeAttribute('mixin',mixin1Id);
+          }
+            else {
+              var tilli = document.querySelector('a-text');
+              console.log(tilli)
+              lol.removeChild(tilli);
+              // var m1 = document.getElementById('mer11');
+              // console.log(m1.parentNode);
+              // mer1.removeChild(m1);
+              //               lets.setAttribute('mixin', mixin1Id);
+
+    text_view = false;
+    // console.log(text_view);
+            }
+           
+          });
+        }
+        
+      });
+    
+</script>  
+<script>
+   AFRAME.registerComponent('clickhandler1', {
+        init: function () {
+          var el = this.el;
+          var mixin2Id = 'planet_anime';
+
+          var text_view = false;
+          el.addEventListener('click', function (event) {
+            var clickedEntity = event.target;
+            console.log('Clicked Entity:', clickedEntity);
+            var getplanet = clickedEntity.getAttribute('id');
+            console.log(getplanet)
+            if (getplanet === "mercury1"){
+              // Create a new <a-text> element
+                
+          var lets = document.getElementById('yo');
+          // lets.setAttribute('mixin', mixin1Id);
+
+
+
+          // var mer1 = document.getElementById('mercury1');
+          var mixin1Id = 'mercury';
+          lets.setAttribute('mixin',mixin2Id);
+                if (!text_view){ 
+                var planetText = document.createElement('a-text');
+    
+            // newText.setAttribute(attributes1)
+            // newText.setAttribute( 'id', 'dee');
+            // planetText.setAttribute('value',"The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and  the sunlight would be as much as seven times brighter." );
+            // planetText.setAttribute('position', '0 30 0'); // Adjusted position
+            // planetText.setAttribute('scale', '10 10 10'); // Adjusted scale
+            // planetText.setAttribute( 'color', 'white');
+            // planetText.setAttribute('width', '5px');
+            planetText.setAttribute( 'mixin',mixin1Id);
+            lets.removeAttribute( 'mixin',mixin2Id);
+
+            // Append the new <a-text> element to the scene
+            // lol.appendChild(newText);
+            lets.appendChild(planetText)
+            text_view = true;
+          // console.log(lets)
+          // lets.removeAttribute('mixin',mixin1Id);
+          }
+            else {
+
+              var tilli = lets.querySelector('a-text');
+              // var m1 = document.getElementById('mer11');
+              // console.log(tilli);
+              lets.removeChild(tilli);
+              lets.setAttribute('mixin',mixin2Id);
+
+
+
+
+              
+
+
+    
+    text_view = false;
+    // console.log(text_view);
+
+
+            }
+            };
+            if (getplanet === "venus1"){
+              // Create a new <a-text> element
+                
+          var lets = document.getElementById('ven');
+          // lets.setAttribute('mixin', mixin1Id);
+
+
+
+          // var mer1 = document.getElementById('mercury1');
+          var mixin1Id = 'venus';
+          lets.setAttribute('mixin',mixin2Id);
+                if (!text_view){ 
+                var planetText = document.createElement('a-text');
+    
+            // newText.setAttribute(attributes1)
+            // newText.setAttribute( 'id', 'dee');
+            // planetText.setAttribute('value',"The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and  the sunlight would be as much as seven times brighter." );
+            // planetText.setAttribute('position', '0 30 0'); // Adjusted position
+            // planetText.setAttribute('scale', '10 10 10'); // Adjusted scale
+            // planetText.setAttribute( 'color', 'white');
+            // planetText.setAttribute('width', '5px');
+            planetText.setAttribute( 'mixin',mixin1Id);
+            lets.removeAttribute( 'mixin',mixin2Id);
+
+            // Append the new <a-text> element to the scene
+            // lol.appendChild(newText);
+            lets.appendChild(planetText)
+            text_view = true;
+          // console.log(lets)
+          // lets.removeAttribute('mixin',mixin1Id);
+          }
+            else {
+
+              var tilli = lets.querySelector('a-text');
+              // var m1 = document.getElementById('mer11');
+              console.log(tilli);
+              lets.removeChild(tilli);
+              lets.setAttribute('mixin',mixin2Id);
+
+
+
+
+              
+
+
+    
+    text_view = false;
+    // console.log(text_view);
+
+
+            }
+            }
+           
+          });
+        }
+        
+      });
+</script>
+
+
+</head>
+  <body>
+
+    <a-scene >
+      <a-camera  position="0 0 280">
+        <a-cursor color="white"></a-cursor>
+      </a-camera>
+      <a-sky color="#111" ></a-sky>
+        <a-assets>
+      <img id="boxTexture" src="/static/css/Capture.PNG">
+      <img id="mer" src="/static/css/ve.PNG">
+      <img id="ven" src="https://cdn.hyperdev.com/drag-in-files.svg?v=1477153069954">
+      
+      <!-- <a-mixin id="rotatee"  animation=""></a-mixin> -->
+      <a-mixin 
+      text="value:The Sun is star at the center of the Solar System. It is a massive, hot ball of plasma, inflated and heated by energy produced by nuclear fusion reactions at its core;
+            color: white;
+            width: 10px"
+      position="0 30 0"
+      scale="10 10 10"
+      id="dee">
+</a-mixin>
+<a-mixin 
+      text="value:The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and  the sunlight would be as much as seven times brighter.;
+            color: white;
+            width: 5px"
+      position="30 20 0"
+      scale="7 7 7"
+      id="mercury">
+      <a-mixin 
+      text="value:The smallest  venuss planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and  the sunlight would be as much as seven times brighter.;
+            color: white;
+            width: 5px"
+      position="-35 20 0"
+      scale="7 7 7"
+      id="venus">
+<a-mixin id="planet_anime"   animation="property: rotation; to:0 360 0;  loop: true;"></a-mixin>
+<a-mixin id="earth" animation="property: rotation; to:0 360 0; dur: 7500; loop: true;"></a-mixin>
+<a-mixin id="mars" animation="property: rotation; to:0 360 0; dur: 8000; loop: true;"></a-mixin>
+<a-mixin id="jupitar" animation="property: rotation; to:0 360 0; dur: 10000; loop: true;"></a-mixin>
+<a-mixin id="saturn" animation="property: rotation; to:0 360 0; dur: 10000; loop: true;"></a-mixin>
+<a-mixin id="uranus" animation="property: rotation; to:0 360 0; dur: 10000; loop: true;"></a-mixin>
+<a-mixin id="neptune" animation="property: rotation; to:0 360 0; dur: 20000; loop: true;"></a-mixin>
+    </a-assets>
+
+
+
+      <!-- the sun -->
+      <a-entity  id="losun"  sunclickhandler>
+        <a-sphere  src="#boxTexture" color="pink" position="0 0 0" rotation="90 0 90" radius="20" ></a-sphere>
+        <a-light type="ambient" color="yelow" light=""></a-light>
+    <a-light type="point" intensity="10" position="2 4 0" light=""></a-light>
+          </a-entity>
+<a-entity clickhandler1>
+
+  <!-- mercury -->
+<!-- animation="to: -2 360" visible="" position="5 5 -2" scale="" rotation="-17.12999273447101 309.0223478821778 33.1678556933506" -->
+<a-entity animation="property: rotation; to:0 360 0; dur: 8000; loop: true;" id="yo" animation=" dur: 9000;">
+  <a-sphere  id="mercury1"   position="30 0 0" src="#mer" color="lightred" radius="2" material="" geometry="" rotation=""></a-sphere>
+  
+  <!-- text="" position=" 0 5 0" scale="6 6 6"></a-text>  -->
+  </a-entity>
+      <!-- venus -->
+  
+      <a-entity id="ven"animation="property: rotation; to:0 360 0; dur: 9000; loop: true;">
+        <a-sphere id="venus1"   position="-35 1 0" src="#mer" color="lightpink" radius="3" material="" geometry="" rotation=""></a-sphere>
+    
+    
+          </a-entity> 
+           <!-- earth -->
+      <a-entity mixin="rotate earth"  >
+        <a-sphere    position="-50 2 0" src="#mer" color="lightblue" radius="5" material="" geometry="" rotation=""></a-sphere>
+    
+    
+          </a-entity> 
+          <!-- mars -->
+      <a-entity mixin="rotate mars"  >
+        <a-sphere    position="80 4 0" src="#mer" color="lightbrown" radius="5.5"  material="" geometry="" rotation=""></a-sphere>
+    
+    
+          </a-entity> 
+           <!-- jupitar -->
+      <a-entity mixin="rotate jupitar"  >
+        <a-sphere    position="-110 12 0" src="#mer" color="lightorange" radius="10" material="" geometry="" rotation=""></a-sphere>
+    
+    
+          </a-entity> 
+           <!-- saturn -->
+      <a-entity mixin="rotate saturn"  >
+        <a-sphere    position="170 15 0" src="#mer" color="lightbrown" radius="7" material="" geometry="" rotation=""></a-sphere>
+    
+    
+          </a-entity>  <!-- jupitar -->
+          <a-entity mixin="rotate uranus"  >
+            <a-sphere    position="-200 16 0" src="#mer" color="tomato" radius="8" material="" geometry="" rotation=""></a-sphere>
+        
+        
+              </a-entity> 
+              <!-- neptune -->
+              <a-entity mixin="rotate neptune"  >
+                <a-sphere    position="250 10 0" src="#mer" color="violet" radius="8" material="" geometry="" rotation=""></a-sphere>
+            
+            
+                  </a-entity>
+</a-entity>
+
+
+    </a-scene>
+  </body>
+</html>

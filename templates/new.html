@@ -1,0 +1,125 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Mouse Click and Rotate Example - A-Frame</title>
+    <meta name="description" content="Mouse Click Example - A-Frame">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('change-color-on-hover', {
+        schema: {
+          color: {default: 'red'}
+        },
+    
+        init: function () {
+          var data = this.data;
+          var el = this.el;  // <a-box>
+          var defaultColor = el.getAttribute('material').color;
+    
+          el.addEventListener('mouseenter', function () {
+            el.setAttribute('color', data.color);
+          });
+    
+          el.addEventListener('mouseleave', function () {
+            el.setAttribute('color', defaultColor);
+          });
+        }
+      });
+    </script>
+    <body>
+      <a-scene>
+        <a-text value="Hello, World!" color="violet"></a-text>
+
+        <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue">
+        </a-box>
+        <a-box color="#EF2D5E" position="0 2 -4" change-color-on-hover="color: green"></a-box>
+
+    
+        <a-camera><a-cursor></a-cursor></a-camera>
+      </a-scene>
+    </body>
+</html> -->
+
+<!-- <html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('mixin-handler', {
+        init: function () {
+          var el = this.el;
+
+          el.addEventListener('click', function () {
+            // Check if the entity has the 'mymixin' mixin
+            if (el.getAttribute('mixin') === 'mymixin') {
+              // Remove the 'mymixin' mixin
+              el.removeAttribute('mixin');
+              console.log('Mixin removed');
+            } else {
+              // Add the 'mymixin' mixin
+              el.setAttribute('mixin', 'mymixin');
+              console.log('Mixin added');
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-box mixin-handler color="red" position="-1 1.5 -3"></a-box>
+      <a-sphere mixin-handler color="green" position="0 1.5 -5"></a-sphere>
+      <a-cylinder mixin-handler color="blue" position="1 1.5 -3"></a-cylinder>
+
+      <a-assets>
+        <a-mixin id="mymixin" color="yellow" scale="2 2 2"></a-mixin>
+      </a-assets>
+    </a-scene>
+  </body>
+</html>
+ -->
+
+ <html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script>
+      AFRAME.registerComponent('toggle-mixin', {
+        init: function () {
+          var el = this.el;
+          var mixin1Id = 'mymixin';
+          var mixin2Id = 'mymixin1';
+          var currentMixin = mixin1Id;
+          // lets.setAttribute('mixin', mixin1Id);
+          el.addEventListener('click', function () {
+            var lets = document.getElementById('yo');
+            
+            // Toggle between mixin1 and mixin2
+            if (currentMixin === mixin1Id) {
+              // Remove mixin1 and add mixin2
+              lets.removeAttribute('mixin');
+              lets.setAttribute('mixin', mixin2Id);
+              currentMixin = mixin2Id;
+            } else {
+              // Remove mixin2 and add mixin1
+              lets.removeAttribute('mixin');
+              lets.setAttribute('mixin', mixin1Id);
+              currentMixin = mixin1Id;
+            }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-mixin id="mymixin" material="color: red" geometry="primitive: box" scale="3 3 3" position="0 0 -3"></a-mixin>
+        <a-mixin id="mymixin1" color="blue" geometry="primitive: box" scale="1 1 1" position="0 3 -3"></a-mixin>
+      </a-assets>
+      <a-camera position="0 0 0">
+        <a-cursor></a-cursor>
+      </a-camera>
+      <a-entity id="yo" toggle-mixin>
+        <a-box  position="0 0 -3"></a-box>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

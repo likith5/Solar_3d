@@ -1,0 +1,35 @@
+
+.header1{
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(239, 183, 233));
+    background-color: rgb(246, 251, 254);
+    border-radius: 15px;
+    padding: 10px;
+    width:50%;
+    color: rgb(100, 100, 101);
+    margin-top:10px ;
+
+}
+#example1{
+    padding: 15px;
+    padding-bottom: 30px;
+    margin:30px 0 0 10px;
+    color: aliceblue;
+    width:50%;
+    border-color: black;
+    border-radius: 10px;
+    height: fit-content;
+    
+    background-image: linear-gradient(to right, rgb(100, 100, 101),rgb(204, 0, 255), rgb(0, 255, 255));
+}
+
+.login-credentials{
+    background-color: rgb(254, 255, 255);
+    padding: 10px;
+    color:rgb(86, 86, 84);
+    
+}
+.content-login{
+    padding: 20px;
+    border-radius: 15px;
+    
+}

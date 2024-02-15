@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mouse Click and Rotate Example - A-Frame</title>
+    <meta name="description" content="Mouse Click Example - A-Frame">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script>
+   var sceneEl = document.querySelector('a-scene');
+   console.log(sceneEl.querySelector('#redBox'));
+   var els = sceneEl.querySelectorAll('*');
+for (var i = 0; i < els.length; i++) {
+  console.log(els[i]);
+}
+    </script>
+    <script>
+       AFRAME.registerComponent('coo', {
+        update: function () {
+          var car = this.el;
+          
+
+          // Use a variable to track the state
+          var enlarged = false;
+
+          var scene = document.querySelector('a-scene');
+
+          car.addEventListener('click', function () {
+            var existingText = document.querySelector('#dynamicText');
+
+            if (!enlarged && !existingText)  {
+              car.setAttribute('scale', { x: 3, y: 1, z: -3 });
+              car.setAttribute('color','Red')
+              var textEntity = document.createElement('a-text');
+              textEntity.setAttribute('id', 'dynamicText');
+              textEntity.setAttribute('value', 'Hello, A-Frame!');
+              textEntity.setAttribute('position', '2 3 0');
+              textEntity.setAttribute('color', 'green');
+              enlarged = true;
+            //   car.setAttribute('animation', {primitive: 'torusKnot', p: 1, q: 3, radiusTubular: 4}, true);
+              car.setAttribute('animation', {roperty: object3D.position.y, to: 2.2,  dir: alternate,dur: 1000,loop:true});
+
+            //   animation="property: object3D.position.y; to: 2.2; dir: alternate; dur: 2000; loop: true"
+              
+              // Append the text entity to the scene
+            //   scene.appendChild(textEntity);
+              
+            } else {
+              car.setAttribute('scale', { x: 2, y: 2, z: 2 });
+              car.setAttribute('color','blue')
+
+              enlarged = false;
+            }
+          });
+        }
+      });
+
+    </script>
+   <script>
+
+// Do `.setAttribute()`s to initialize the entity.
+sceneEl.appendChild(entityEl);
+    AFRAME.registerComponent('mee',{
+        update:function (){
+            var lo = document.getElementById('li');
+            var flag = false;
+            lo.addEventListener('click',function(){
+                if (flag ==false){
+                lo.setAttribute('color', 'pink');
+                car.setAttribute('scale', {x: 5, y: 1, z: 3});
+
+                flag = true;
+
+                }
+                else if  (flag == true){
+                    lo.setAttribute('color', 'black');
+                    car.setAttribute('scale', {x: 2, y: 0, z: 2});
+                    flag = true;
+                }
+                
+
+                lo.setAttribute( "text","value: Hello, A-Frame!"  )
+                // entityEl.setAttribute('do-something-once-loaded', '');
+
+                // lo.setAttribute()
+            });
+        }
+    });
+   </script>
+    <body>
+        
+      
+  <a-scene>
+    <a-assets>
+        <a-asset-item id="car" src="/solar/assests/car/scene.gltf"></a-asset-item>
+        <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
+
+      </a-assets>
+
+      <a-text color="red"  position="2 4 3"id="noo" value="Hello, World!"></a-text>
+
+      <a-entity mee id ='li' position="0 5 -5" >
+        <a-box  coo src="#boxTexture" id="webox" position="0 2 -5" rotation="0 45 45" scale="2 2 2"
+      ></a-box>
+
+        <a-camera>
+            <a-cursor></a-cursor>
+          </a-camera>
+    </a-entity>
+      
+        
+     
+  </a-scene>
+
+    </body>
+</html>
